@@ -1,18 +1,20 @@
-import contacts from "../contacts";
+import Avatar from "./Avatar";
+import Paragraph from "./Paragraph";
 
-function Card(props){
-    return(
+function Card(props) {
+    return (
         <div className="card">
             <div className="top">
+                <Paragraph content = {props.id} />
                 <h2 className="name">{props.name}</h2>
-                <img className="circle-img" src={props.imgURL} alt="avatar_img"/>
+                <Avatar className="circle-img" imgURL={props.imgURL} />
             </div>
             <div className="bottom">
-                <p className="info">{props.phone}</p>
-                <p className="info">{props.email}</p>
+                <Paragraph content = {props.phone} />
+                <Paragraph content = {props.email} />
             </div>
         </div>
-    )
+    );
 }
 
 export default Card;
